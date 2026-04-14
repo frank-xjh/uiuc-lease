@@ -20,6 +20,10 @@ def _normalize_provider_name(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", value.lower())
 
 
+def _format_price_display(price: str) -> str:
+    return price.removeprefix("$") + "🔪"
+
+
 @register(
     "lease_price", "frank", "Show UIUC lease prices for supported landlords.", "1.0.0"
 )
@@ -92,8 +96,9 @@ class LeasePricePlugin(Star):
         lines = [f"{provider.display_name}:", ""]
         for item in prices:
             lines.append(item.name)
+            lines.append("")
             lines.append(
-                f"{item.beds} BED {item.baths} BATH {item.price} {item.sq_ft} SQ FT"
+                f"{item.beds} BED {item.baths} BATH {_format_price_display(item.price)} {item.sq_ft} SQ FT"
             )
             lines.append("")
         if lines[-1] == "":
