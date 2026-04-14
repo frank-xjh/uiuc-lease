@@ -1,0 +1,6 @@
+name: lease_price
+display_name: UIUC Lease Price
+desc: Show floor plan starting prices for supported UIUC lease providers.
+version: v0.1.0
+author: frank
+repo: https://github.com/frank-xjh/uiuc-lease
