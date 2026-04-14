@@ -96,9 +96,11 @@ class LeasePricePlugin(Star):
         lines = [f"{provider.display_name}:", ""]
         for item in prices:
             lines.append(item.name)
-            lines.append("")
             lines.append(
-                f"{item.beds} BED {item.baths} BATH {_format_price_display(item.price)} {item.sq_ft} SQ FT"
+                f"{item.beds} BED {item.baths} BATH | {item.sq_ft} SQ FT"
+            )
+            lines.append(
+                f"{_format_price_display(item.price)}"
             )
             lines.append("")
         if lines[-1] == "":
