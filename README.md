@@ -19,8 +19,10 @@ The plugin currently returns:
 
 - provider heading
 - full floor plan name
-- bed and bath layout
+- bed count
+- bath count
 - starting monthly price
+- square footage when available
 
 ## Data source
 
